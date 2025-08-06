@@ -154,7 +154,7 @@ const Home = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-semibold px-8 py-4 text-lg"
+                className="border-primary-foreground text-primary-foreground hover:bg-secondary hover:text-highlight hover:border-secondary font-semibold px-8 py-4 text-lg transition-smooth"
                 asChild
               >
                 <Link to="/produits">
