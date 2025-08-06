@@ -44,7 +44,7 @@ const Home = () => {
                 className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-2 border-primary-foreground font-semibold px-8 py-4 text-lg transition-smooth"
                 asChild
               >
-                <Link to="/contact">
+                <Link to="/contact#carte">
                   <MapPin className="mr-2 h-5 w-5" />
                   Nous trouver
                 </Link>
