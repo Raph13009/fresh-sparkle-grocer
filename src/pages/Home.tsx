@@ -40,9 +40,8 @@ const Home = () => {
                 </Link>
               </Button>
               <Button 
-                variant="outline" 
                 size="lg"
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-semibold px-8 py-4 text-lg"
+                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-2 border-primary-foreground font-semibold px-8 py-4 text-lg transition-smooth"
                 asChild
               >
                 <Link to="/contact">
