@@ -2,41 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Fresh & Fresh Grocery Store Design System
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 98%;
+    --foreground: 154 50% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 154 50% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 154 50% 12%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Fresh Green - Main brand color #124131 */
+    --primary: 154 70% 14%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Bright Yellow - Highlight color #FFDD11 */
+    --secondary: 50 100% 55%;
+    --secondary-foreground: 14 85% 35%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Light gray for muted elements */
+    --muted: 154 10% 95%;
+    --muted-foreground: 154 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent using fresh green variant */
+    --accent: 154 45% 25%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Orange-red for important text on yellow #AA3101 */
+    --highlight: 14 85% 35%;
+    --highlight-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 154 20% 90%;
+    --input: 154 15% 92%;
+    --ring: 154 70% 14%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Fresh & Fresh specific colors */
+    --fresh-green: 154 70% 14%;
+    --fresh-yellow: 50 100% 55%;
+    --fresh-orange: 14 85% 35%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--fresh-green)), hsl(154 60% 18%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--fresh-yellow)), hsl(50 95% 60%));
+    --gradient-soft: linear-gradient(180deg, hsl(var(--background)), hsl(154 15% 96%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(var(--fresh-green) / 0.1);
+    --shadow-card: 0 8px 25px hsl(var(--fresh-green) / 0.15);
+    --shadow-highlight: 0 0 30px hsl(var(--fresh-yellow) / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +83,48 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 154 50% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 154 45% 10%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 154 45% 10%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 154 60% 20%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 50 85% 45%;
+    --secondary-foreground: 14 85% 35%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 154 30% 15%;
+    --muted-foreground: 154 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 154 40% 18%;
+    --accent-foreground: 0 0% 95%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --highlight: 14 85% 45%;
+    --highlight-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 154 30% 20%;
+    --input: 154 25% 18%;
+    --ring: 154 60% 20%;
+
+    --fresh-green: 154 60% 20%;
+    --fresh-yellow: 50 85% 45%;
+    --fresh-orange: 14 85% 45%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(var(--fresh-green)), hsl(154 50% 25%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--fresh-yellow)), hsl(50 80% 50%));
+    --gradient-soft: linear-gradient(180deg, hsl(var(--background)), hsl(154 40% 12%));
+
+    --shadow-soft: 0 4px 20px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 8px 25px hsl(0 0% 0% / 0.4);
+    --shadow-highlight: 0 0 30px hsl(var(--fresh-yellow) / 0.2);
   }
 }
 
@@ -100,6 +134,119 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Fresh & Fresh specific component styles */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .accent-gradient {
+    background: var(--gradient-accent);
+  }
+  
+  .soft-gradient {
+    background: var(--gradient-soft);
+  }
+  
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .soft-shadow {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .highlight-shadow {
+    box-shadow: var(--shadow-highlight);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  .hover-lift {
+    @apply transition-smooth hover:transform hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .text-fresh-green {
+    color: hsl(var(--fresh-green));
+  }
+  
+  .text-fresh-yellow {
+    color: hsl(var(--fresh-yellow));
+  }
+  
+  .text-fresh-orange {
+    color: hsl(var(--fresh-orange));
+  }
+  
+  .bg-fresh-green {
+    background-color: hsl(var(--fresh-green));
+  }
+  
+  .bg-fresh-yellow {
+    background-color: hsl(var(--fresh-yellow));
+  }
+  
+  .bg-fresh-orange {
+    background-color: hsl(var(--fresh-orange));
+  }
+}
+
+/* Keyframes for custom animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
